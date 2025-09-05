@@ -1,0 +1,52 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'converter/style.css' %}">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h2>Unit Converter</h2>
+            <div class="tabs">
+                <a href="{% url 'index' %}">Length</a>
+                <a class="active">Weight</a>
+                <a href="{% url 'temperature' %}">Temperature</a>
+            </div>
+
+            <form action="{% url 'result' %}" method="post">
+                {% csrf_token %}
+                <label for="weight">Enter the weight to convert</label>
+                <input type="number" id="weight" name="weight" placeholder="" step="0.01" min="0" required>
+
+                <label for="from">Unit to Convert from</label>
+                <select id="from" name="from_unit" required>
+                    <option value="">-- Select unit --</option>
+                    <option value="mg">Milligram</option>
+                    <option value="g">Gram</option>
+                    <option value="kg">Kilogram</option>
+                    <option value="oz">Ounce</option>
+                    <option value="lb">Pound</option>
+                </select>
+
+                <label for="to">Unit to Convert to</label>
+                <select id="to" name="to_unit" required>
+                    <option value="">-- Select unit --</option>
+                    <option value="mg">Milligram</option>
+                    <option value="g">Gram</option>
+                    <option value="kg">Kilogram</option>
+                    <option value="oz">Ounce</option>
+                    <option value="lb">Pound</option>
+                </select>
+
+                <input type="submit" value="Convert">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

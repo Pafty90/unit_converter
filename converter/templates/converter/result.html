@@ -1,0 +1,56 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'converter/style.css' %}">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h2>Unit Converter</h2>
+            <div class="tabs">
+                {% if length %}
+                <a class="active" href="{% url 'index' %}">Length</a>
+                {% else %}
+                <a href="{% url 'index' %}">Length</a>
+                {% endif %}
+
+                {% if weight %}
+                <a class="active" href="{% url 'weight' %}">Weight</a>
+                {% else %}
+                <a href="{% url 'weight' %}">Weight</a>
+                {% endif %}
+                
+                {% if temperature %}
+                <a class="active" href="{% url 'temperature' %}">Temperature</a>
+                {% else %}
+                <a href="{% url 'temperature' %}">Temperature</a>
+                {% endif %}
+            </div>
+
+            {% if result %}
+                <p class="result-label">Result of your calculation</p>
+                <p class="result">{{ value }} {{ from_unit }} = {{ result }} {{ to_unit }}</p>
+            {% else %}
+                <p>No conversion done yet.</p>
+            {% endif %}
+            
+            {% if weight %}
+            <form action="{% url 'weight' %}" method="post">
+            {% elif temperature %}
+            <form action="{% url 'temperature' %}" method="post">
+            {% else %}
+            <form action="{% url 'index' %}" method="post">
+            {% endif %}
+                {% csrf_token %}
+                <input type="submit" value="Reset">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

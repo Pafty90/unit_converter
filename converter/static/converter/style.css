@@ -1,0 +1,70 @@
+body {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  background-color: #f7f7f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  border: 2px solid #333;
+  border-radius: 5px;
+  padding: 20px;
+  width: 280px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 1.4em;
+}
+
+.tabs {
+  margin: 10px 0 20px;
+}
+
+.tabs a {
+  margin-right: 15px;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;          
+}
+
+.tabs .active {
+  text-decoration: underline;
+  font-weight: bold;
+  color: #3366cc;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 0.95em;
+}
+
+input, select {
+  width: 100%;
+  padding: 6px;
+  border: 2px solid #333;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-size: 1em;
+}
+
+.result-label {
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+
+.result {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}

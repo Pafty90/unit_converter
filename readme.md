@@ -16,7 +16,7 @@ Inspired by [roadmap.sh Unit Converter project](https://roadmap.sh/projects/unit
 ---
 
 ## 📸 Preview
-![Preview](https://github.com/user-attachments/assets/cf6839e0-6a40-4a43-950d-6d2fa74d7344)
+![Preview](preview.gif)
 
 ---
 
